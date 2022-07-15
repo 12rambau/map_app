@@ -1,1 +1,1 @@
-web: voila --Voila.ip=0.0.0.0 --no-browser --template=material --enable_nbextensions=True --show_tracebacks=True ui.ipynb
+web: voila --Voila.ip=0.0.0.0 --port=$PORT --no-browser --show_tracebacks=True ui.ipynb
