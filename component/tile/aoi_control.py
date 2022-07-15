@@ -50,7 +50,7 @@ class AoiView(aoi.AoiView):
 
 class AoiControl(sm.MenuControl):
     def __init__(self, m):
-        
+
         gee_dir = "projects/earthengine-legacy/assets/users/bornToBeAlive/sepal_ui_test"
 
         # set the aoi_model to share it with the other components
