@@ -19,16 +19,18 @@ class MapTile(sw.Tile):
         )
 
         # create the analysis controls
-        self.aoi_control = AoiControl(self.m)
-        self.viz_control = VizControl(self.aoi_control.model, self.m)
+        self.aoi_control = AoiControl(m=self.m)
+        self.viz_control = VizControl(self.aoi_control.model, m=self.m)
         self.export_control = ExportControl(
-            self.viz_control.model, self.aoi_control.model
+            self.viz_control.model, self.aoi_control.model, m=self.m
         )
+        self.v_inspector = sm.ValueInspector(m=self.m)
 
         # add them on the map
         self.m.add_control(self.viz_control)
         self.m.add_control(self.aoi_control)
         self.m.add_control(self.export_control)
+        self.m.add_control(self.v_inspector)
 
         # create the tile
         super().__init__("map_tile", "", [self.m])

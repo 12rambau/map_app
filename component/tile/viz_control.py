@@ -11,9 +11,6 @@ from component.model import VizModel
 class VizControl(sm.MenuControl):
     def __init__(self, aoi_model, m):
 
-        # save the map as a member
-        self.m = m
-
         # define the models
         self.model = VizModel()
         self.aoi_model = aoi_model
@@ -41,7 +38,7 @@ class VizControl(sm.MenuControl):
         )
 
         # create the menu
-        super().__init__("fas fa-cogs", tile)
+        super().__init__("fas fa-cogs", tile, m=m)
 
         # now that the Tile is created we can link it to a specific function
         self.btn.on_event("click", self._on_run)

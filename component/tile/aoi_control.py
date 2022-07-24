@@ -61,4 +61,4 @@ class AoiControl(sm.MenuControl):
         # safe the model as a member
         self.model = self.aoi_view.model
 
-        super().__init__("fas fa-map-marker-alt", self.aoi_view)
+        super().__init__("fas fa-map-marker-alt", self.aoi_view, m=m)

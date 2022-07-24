@@ -9,7 +9,7 @@ from component.message import cm
 
 
 class ExportControl(sm.MenuControl):
-    def __init__(self, aoi_model, model):
+    def __init__(self, aoi_model, model, m):
 
         # save the models as member of the class
         self.model = model
@@ -34,7 +34,7 @@ class ExportControl(sm.MenuControl):
         )
 
         # add it to the control
-        super().__init__("fas fa-download", tile, position="topleft")
+        super().__init__("fas fa-download", tile, position="topleft", m=m)
 
         # now that the Tile is created we can link it to a specific function
         self.btn.on_event("click", self._export_to_asset)
